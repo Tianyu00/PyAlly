@@ -64,7 +64,7 @@ def req_sess ( self ):
 		
 def call_api (
 	self, method, url_suffix, data=None, 
-	timeout=6, verbose=False, use_auth=True, full_output=False):
+	timeout=15, verbose=False, use_auth=True, full_output=False):
 	"""Properly handle sending one API request
 	"""
 	s		= self.req_sess()
