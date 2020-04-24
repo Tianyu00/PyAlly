@@ -90,38 +90,45 @@ def call_api (
 		)
 	)
 	
-	try:
-		# Send Request
-		r = s.send(
-			req,
-			timeout=timeout
-		)
-		if r:
-			r = r.xml()
-			r = r['response']
+	r = s.send(
+		req,
+		timeout=timeout
+	)
+	
+	return r
+	
+# 	try:
+# 		# Send Request
+# 		r = s.send(
+# 			req,
+# 			timeout=timeout
+# 		)
+# 		if r:
+# 			r = r.xml()
+# 			r = r['response']
 
-			if r['error'] != 'Success':
-				raise ValueError( r['error'] )
-		else:
-			r.raise_for_status()
+# 			if r['error'] != 'Success':
+# 				raise ValueError( r['error'] )
+# 		else:
+# 			r.raise_for_status()
 			
-	except ConnectionError as e:
-		print("ConnectionError:",e)
-		raise
-	except HTTPError as e:
-		print("HTTPError:",e)
-		raise
-	except Timeout as e:
-		print("Timeout:",e)
-		raise
+# 	except ConnectionError as e:
+# 		print("ConnectionError:",e)
+# 		raise
+# 	except HTTPError as e:
+# 		print("HTTPError:",e)
+# 		raise
+# 	except Timeout as e:
+# 		print("Timeout:",e)
+# 		raise
 
-	if full_output:
-		return {
-			'response'	: r,
-			'request'	: utils.pretty_print_POST(req)
-		}
-	else:
-		return r
+# 	if full_output:
+# 		return {
+# 			'response'	: r,
+# 			'request'	: utils.pretty_print_POST(req)
+# 		}
+# 	else:
+# 		return r
 
 
 
