@@ -96,7 +96,7 @@ def call_api (
 			timeout=timeout
 		)
 		if r:
-			r = r.json()
+			r = r.xml()
 			r = r['response']
 
 			if r['error'] != 'Success':
