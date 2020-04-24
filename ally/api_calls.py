@@ -5,6 +5,7 @@ from requests_oauthlib   import OAuth1
 import datetime
 import requests
 import json
+import xml
 
 from . import utils
 from . import order as order_utils
