@@ -89,12 +89,6 @@ def call_api (
 		)
 	)
 	
-# 	r = s.send(
-# 		req,
-# 		timeout=timeout
-# 	)
-	
-# 	return r
 	
 	try:
 		# Send Request
@@ -449,8 +443,8 @@ def timesales( self, symbols="", interval="5min", rpp="10", index="0", startdate
 		data		= data
 	)
 
-	return results
-# 	return results['quotes']['quote']
+# 	return results
+	return results['quotes']['quote']
 
 ############################################################################
 def market_clock ( self ):
