@@ -422,7 +422,7 @@ def timesales( self, symbols="", interval="5min", rpp="10", index="0", startdate
 	symbols = symbols.upper()
 
 	# Assemble URL
-	url_suffix	= 'market/timesales.json'
+	url_suffix	= 'market/timesales.xml'
 	data = {k:v for k,v in {
 			'symbols': symbols,
 			'interval': interval,
